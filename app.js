@@ -27,7 +27,12 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', function (req, res) {
-  res.status(201).json(req.body)
+  contentType = req.headers['content-type']
+  if(contentType == 'application/json'){
+    res.status(201).json(req.body);
+  } else {
+    res.send(400);
+  }
 })
 
 app.listen('8080', () => {
