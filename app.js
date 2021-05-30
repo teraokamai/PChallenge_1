@@ -26,6 +26,10 @@ app.get('/', (req, res) => {
   res.json({text: "hello world"})
 })
 
+app.post('/', function (req, res) {
+  res.status(201).json(req.body)
+})
+
 app.listen('8080', () => {
   
 });
