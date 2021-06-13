@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 
 app.post('/', function (req, res) {
   contentType = req.headers['content-type']
-  if(contentType == 'application/json'){
+  if(contentType === 'application/json'){
     res.status(201).json(req.body);
   } else {
     res.send(400);
